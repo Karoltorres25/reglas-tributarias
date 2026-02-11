@@ -1,61 +1,48 @@
 {
-  "configuracion_tributaria": {
-    "pais": "Colombia",
-    "año_fiscal": 2026,
-    "moneda": "COP",
-    "valor_uvt": 50650,
-    "entidad_reguladora": "DIAN"
+  "anio_fiscal": 2026,
+  "uvt_valor": 50650,
+  "configuracion_nacional": {
+    "retencion_fuente": [
+      {
+        "concepto": "Compras (General)",
+        "base_uvt": 27,
+        "base_pesos": 1367550,
+        "tarifa_declarante": 0.025,
+        "tarifa_no_declarante": 0.035
+      },
+      {
+        "concepto": "Servicios (General)",
+        "base_uvt": 4,
+        "base_pesos": 202600,
+        "tarifa_declarante": 0.04,
+        "tarifa_no_declarante": 0.06
+      },
+      {
+        "concepto": "Honorarios y Comisiones (Persona Jurídica)",
+        "base_uvt": 0,
+        "base_pesos": 0,
+        "tarifa": 0.11
+      },
+      {
+        "concepto": "Arrendamiento Bienes Inmuebles",
+        "base_uvt": 27,
+        "base_pesos": 1367550,
+        "tarifa": 0.035
+      }
+    ]
   },
-  "reglas_retencion_fuente": [
-    {
-      "concepto": "Servicios en general",
-      "base_minima_pesos": 202600,
-      "base_minima_uvt": 4,
-      "tarifas": {
-        "declarante": 0.04,
-        "no_declarante": 0.06
+  "configuracion_municipal": {
+    "reteica_bogota_estandar": [
+      {
+        "actividad": "Servicios de consultoría",
+        "tarifa_por_mil": 9.66,
+        "base_uvt": 4
+      },
+      {
+        "actividad": "Actividades comerciales",
+        "tarifa_por_mil": 11.04,
+        "base_uvt": 27
       }
-    },
-    {
-      "concepto": "Honorarios y comisiones",
-      "base_minima_pesos": 0,
-      "base_minima_uvt": 0,
-      "tarifas": {
-        "persona_juridica": 0.11,
-        "persona_natural_declarante": 0.11,
-        "persona_natural_no_declarante": 0.10
-      }
-    },
-    {
-      "concepto": "Compras en general",
-      "base_minima_pesos": 1367550,
-      "base_minima_uvt": 27,
-      "tarifas": {
-        "declarante": 0.025,
-        "no_declarante": 0.035
-      }
-    },
-    {
-      "concepto": "Arrendamiento bienes muebles",
-      "base_minima_pesos": 0,
-      "base_minima_uvt": 0,
-      "tarifa": 0.04
-    }
-  ],
-  "reglas_reteiva": {
-    "tarifa_general": 0.15,
-    "aplicacion": "Se aplica el 15% sobre el valor del IVA facturado",
-    "condicion_vendedor": "Regimen Comun (No Gran Contribuyente)",
-    "condicion_comprador": "Gran Contribuyente o Agente de Retencion"
-  },
-  "reglas_reteica": {
-    "descripcion": "Depende de la ciudad y actividad economica (CIIU)",
-    "tarifas_promedio": {
-      "servicios": 0.00966,
-      "comercio": 0.01104,
-      "industrial": 0.0066
-    },
-    "base_minima_servicios_uvt": 4,
-    "base_minima_compras_uvt": 27
+    ]
   }
 }
