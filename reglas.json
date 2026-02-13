@@ -1,7 +1,7 @@
 {
   "configuracion_empresa": {
     "nombre": "Seniors Club",
-    "uvt_2026": 50650,
+    "uvt_2026": 52374,
     "indicador_nota_factura": "Dirección del Club"
   },
   "centros_costos": {
@@ -23,10 +23,31 @@
     { "keywords": ["terapia", "fisioterapia", "salud", "medico", "enfermera"], "cuenta": "740505", "nombre": "Honorarios Salud" }
   ],
   "normativa_tributaria": {
-    "retencion_fuente_nacional": {
-      "compras_bienes": { "base_pesos": 1367550, "declarante": 0.025, "no_declarante": 0.035 },
-      "servicios_generales": { "base_pesos": 202600, "declarante": 0.04, "no_declarante": 0.06 },
-      "honorarios_juridica": { "base_pesos": 0, "tarifa": 0.11 }
+    "retencion_fuente": {
+      "compras_generales": {
+        "base_uvt": 10,
+        "base_pesos": 524000,
+        "tarifas": { "declarante": 0.025, "no_declarante": 0.035 }
+      },
+      "compras_agricolas_sin_procesar": {
+        "base_uvt": 70,
+        "base_pesos": 3666000,
+        "tarifa": 0.015
+      },
+      "compras_tarjeta_debito_credito": {
+        "base_uvt": 0,
+        "base_pesos": 0,
+        "tarifa": 0.015
+      },
+      "servicios_generales": {
+        "base_uvt": 4,
+        "base_pesos": 209000,
+        "tarifas": { "declarante": 0.04, "no_declarante": 0.06 }
+      },
+      "honorarios_y_comisiones": {
+        "base_uvt": 0,
+        "base_pesos": 0,
+        "tarifas": { "juridica": 0.11, "natural_declarante": 0.11, "natural_no_declarante": 0.10 }
     },
     "reteica_municipal": {
       "bogota": { "compras": 11.04, "servicios": 9.66, "restaurante": 11.04, "base_min_uvt": 27 },
