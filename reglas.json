@@ -50,11 +50,34 @@
         "tarifas": { "juridica": 0.11, "natural_declarante": 0.11, "natural_no_declarante": 0.10 }
     },
     "reteica_municipal": {
-      "bogota": { "compras": 11.04, "servicios": 9.66, "restaurante": 11.04, "base_min_uvt": 27 },
-      "medellin": { "compras": 10.0, "servicios": 10.0, "restaurante": 7.0, "base_min_uvt": 0 },
-      "cali": { "compras": 7.7, "servicios": 6.6, "restaurante": 10.0, "base_min_uvt": 0 },
-      "pereira": { "compras": 10.0, "servicios": 10.0, "restaurante": 7.0, "base_min_uvt": 0 },
-      "armenia": { "compras": 7.0, "servicios": 10.0, "restaurante": 8.0, "base_min_uvt": 27 }
+  "bogota": {
+    "compras": 0.01104,
+    "servicios": 0.00966,
+    "base_compras_pesos": 1414000,
+    "base_servicios_pesos": 209000
+  },
+  "medellin": {
+    "compras": 0.010,
+    "servicios": 0.010,
+    "base_general_pesos": 0
+  },
+  "cali": {
+    "compras": 0.0077,
+    "servicios": 0.0066,
+    "base_general_pesos": 0
+  },
+  "pereira": {
+    "compras": 0.010,
+    "servicios": 0.010,
+    "base_general_pesos": 0
+  },
+  "armenia": {
+    "compras": 0.007,
+    "servicios": 0.010,
+    "base_compras_pesos": 1414000,
+    "base_servicios_pesos": 210000
+  }
+
     }
   }
 }
