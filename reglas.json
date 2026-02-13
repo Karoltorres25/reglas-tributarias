@@ -1,48 +1,39 @@
 {
-  "anio_fiscal": 2026,
-  "uvt_valor": 50650,
-  "configuracion_nacional": {
-    "retencion_fuente": [
-      {
-        "concepto": "Compras (General)",
-        "base_uvt": 27,
-        "base_pesos": 1367550,
-        "tarifa_declarante": 0.025,
-        "tarifa_no_declarante": 0.035
-      },
-      {
-        "concepto": "Servicios (General)",
-        "base_uvt": 4,
-        "base_pesos": 202600,
-        "tarifa_declarante": 0.04,
-        "tarifa_no_declarante": 0.06
-      },
-      {
-        "concepto": "Honorarios y Comisiones (Persona Jurídica)",
-        "base_uvt": 0,
-        "base_pesos": 0,
-        "tarifa": 0.11
-      },
-      {
-        "concepto": "Arrendamiento Bienes Inmuebles",
-        "base_uvt": 27,
-        "base_pesos": 1367550,
-        "tarifa": 0.035
-      }
-    ]
+  "configuracion_empresa": {
+    "nombre": "Seniors Club",
+    "uvt_2026": 50650,
+    "indicador_nota_factura": "Dirección del Club"
   },
-  "configuracion_municipal": {
-    "reteica_bogota_estandar": [
-      {
-        "actividad": "Servicios de consultoría",
-        "tarifa_por_mil": 9.66,
-        "base_uvt": 4
-      },
-      {
-        "actividad": "Actividades comerciales",
-        "tarifa_por_mil": 11.04,
-        "base_uvt": 27
-      }
-    ]
+  "centros_costos": {
+    "seniors_armenia": { "base": "2", "deducible": "2-1", "no_deducible": "2-2", "ciudad": "armenia" },
+    "seniors_san_lucas": { "base": "1", "deducible": "1-1", "no_deducible": "1-2", "ciudad": "medellin" },
+    "seniors_platino": { "base": "13", "deducible": "13-1", "no_deducible": "13-2", "ciudad": "medellin" },
+    "seniors_vitaly": { "base": "14", "deducible": "14-1", "no_deducible": "14-2", "ciudad": "pereira" },
+    "seniors_pance": { "base": "9", "deducible": "9-1", "no_deducible": "9-2", "ciudad": "cali" },
+    "seniors_bogota": { "base": "5", "deducible": "5-1", "no_deducible": "5-2", "ciudad": "bogota" }
+  },
+  "puc_mapeo_cuentas": [
+    { "keywords": ["carne", "res", "ternera"], "cuenta": "7105050501", "nombre": "Carnes" },
+    { "keywords": ["pollo", "ave", "pechuga"], "cuenta": "7105050502", "nombre": "Pollo" },
+    { "keywords": ["pescado", "marisco", "camaron"], "cuenta": "7105050504", "nombre": "Pescado" },
+    { "keywords": ["fruta", "verdura", "legumbre", "hortaliza"], "cuenta": "7105050509", "nombre": "Frutas y Verduras" },
+    { "keywords": ["detergente", "jabon", "escoba", "desinfectante"], "cuenta": "71050515", "nombre": "Aseo y Cafetería" },
+    { "keywords": ["reparacion", "arreglo", "repuesto", "tecnico"], "cuenta": "733560", "nombre": "Mantenimiento" },
+    { "keywords": ["papel", "resma", "esfero", "tinta", "toner"], "cuenta": "739530", "nombre": "Papelería" },
+    { "keywords": ["terapia", "fisioterapia", "salud", "medico", "enfermera"], "cuenta": "740505", "nombre": "Honorarios Salud" }
+  ],
+  "normativa_tributaria": {
+    "retencion_fuente_nacional": {
+      "compras_bienes": { "base_pesos": 1367550, "declarante": 0.025, "no_declarante": 0.035 },
+      "servicios_generales": { "base_pesos": 202600, "declarante": 0.04, "no_declarante": 0.06 },
+      "honorarios_juridica": { "base_pesos": 0, "tarifa": 0.11 }
+    },
+    "reteica_municipal": {
+      "bogota": { "compras": 11.04, "servicios": 9.66, "restaurante": 11.04, "base_min_uvt": 27 },
+      "medellin": { "compras": 10.0, "servicios": 10.0, "restaurante": 7.0, "base_min_uvt": 0 },
+      "cali": { "compras": 7.7, "servicios": 6.6, "restaurante": 10.0, "base_min_uvt": 0 },
+      "pereira": { "compras": 10.0, "servicios": 10.0, "restaurante": 7.0, "base_min_uvt": 0 },
+      "armenia": { "compras": 7.0, "servicios": 10.0, "restaurante": 8.0, "base_min_uvt": 27 }
+    }
   }
 }
