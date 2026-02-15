@@ -49,6 +49,26 @@
         "base_pesos": 0,
         "tarifas": { "juridica": 0.11, "natural_declarante": 0.11, "natural_no_declarante": 0.10 }
     },
+  
+  "maestro_proveedores": [
+    { "nit": "900764534", "nombre": "DISTRIFRUTAS JALY S.A.S", "ciudad_ica": "bogota", "cuenta_contable": "23680601" },
+    { "nit": "830003500", "nombre": "CARNES Y PROCESADOS S.A.S.", "ciudad_ica": "bogota", "cuenta_contable": "23680601" },
+    { "nit": "900352214", "nombre": "CALZADO BATA (MANISOL S.A.S.)", "ciudad_ica": "bogota", "cuenta_contable": "23680601" },
+    { "nit": "16692263", "nombre": "HORACIO ARTUNDUAGA CUELLAR", "ciudad_ica": "cali", "cuenta_contable": "23680707" },
+    { "nit": "890399011", "nombre": "SANTIAGO DE CALI DISTRITO", "ciudad_ica": "cali", "cuenta_contable": "23680711" },
+    { "nit": "1107065997", "nombre": "LUIS FELIPE RAMIREZ", "ciudad_ica": "cali", "cuenta_contable": "23680711" },
+    { "nit": "900135351", "nombre": "SEGURIDAD ATLAS LTDA", "ciudad_ica": "cali", "cuenta_contable": "23680711" },
+    { "nit": "805011985", "nombre": "COMERCIALIZADORA DE CARNES SAS", "ciudad_ica": "cali", "cuenta_contable": "23680707" },
+    { "nit": "800222333", "nombre": "AVICOLA TRIPLE A S.A.S", "ciudad_ica": "pereira", "cuenta_contable": "23681101" },
+    { "nit": "901364580", "nombre": "ASEO INTEGRAL DEL EJE S.A.S", "ciudad_ica": "armenia", "cuenta_contable": "23680501" },
+    { "nit": "892115014", "nombre": "EMPRESA DE ENERGIA DEL QUINDIO", "ciudad_ica": "armenia", "cuenta_contable": "23680501" },
+    { "nit": "860001234", "nombre": "COORDINADORA MERCANTIL S.A.", "ciudad_ica": "medellin", "cuenta_contable": "23680101" },
+    { "nit": "900356541", "nombre": "TECNOLOGIA E INFORMATICA SAS", "ciudad_ica": "medellin", "cuenta_contable": "23680101" },
+    { "nit": "800123987", "nombre": "MULTISERVICIOS DEL EJE", "ciudad_ica": "pereira", "cuenta_contable": "23681101" },
+    { "nit": "900888777", "nombre": "LIMPIEZA Y SALUD SAS", "ciudad_ica": "bogota", "cuenta_contable": "23680601" }
+  ],
+
+   },   
     "reteica_municipal": {
   "bogota": {
     "compras": 0.01104,
