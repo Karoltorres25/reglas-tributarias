@@ -34,11 +34,6 @@
         "base_pesos": 3666000,
         "tarifa": 0.015
       },
-      "compras_tarjeta_debito_credito": {
-        "base_uvt": 0,
-        "base_pesos": 0,
-        "tarifa": 0.015
-      },
       "servicios_generales": {
         "base_uvt": 4,
         "base_pesos": 209000,
@@ -49,7 +44,7 @@
         "base_pesos": 0,
         "tarifas": { "juridica": 0.11, "natural_declarante": 0.11, "natural_no_declarante": 0.10 }
     },
-    
+    },
     "reteica_municipal": {
   "bogota": {
     "compras": 0.01104,
