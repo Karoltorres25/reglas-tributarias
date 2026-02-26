@@ -72,8 +72,16 @@
     "servicios": 0.010,
     "base_compras_pesos": 1414000,
     "base_servicios_pesos": 210000
-  }
-
+ }
+  },     
+"reglas_decision": {
+  "orden": [
+    "identificar_tipo",
+    "identificar_ciudad",
+    "evaluar_retefuente",
+    "evaluar_reteica",
+    "calcular_totales"
+  ]
     }
   }
 }
