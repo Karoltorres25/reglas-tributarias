@@ -2,8 +2,10 @@
   "configuracion_empresa": {
     "nombre": "Seniors Club",
     "uvt_2026": 52374,
-    "indicador_nota_factura": "Dirección del Club"
+    "indicador_nota_factura": "Dirección del Club",
+    "regla_calculo_uvt": "SIEMPRE calcular bases en pesos como base_uvt * uvt_2026"
   },
+
   "centros_costos": {
     "seniors_armenia": { "base": "2", "deducible": "2-1", "no_deducible": "2-2", "ciudad": "armenia" },
     "seniors_san_lucas": { "base": "1", "deducible": "1-1", "no_deducible": "1-2", "ciudad": "medellin" },
@@ -12,6 +14,7 @@
     "seniors_pance": { "base": "9", "deducible": "9-1", "no_deducible": "9-2", "ciudad": "cali" },
     "seniors_bogota": { "base": "5", "deducible": "5-1", "no_deducible": "5-2", "ciudad": "bogota" }
   },
+
   "puc_mapeo_cuentas": [
     { "keywords": ["carne", "res", "ternera"], "cuenta": "7105050501", "nombre": "Carnes" },
     { "keywords": ["pollo", "ave", "pechuga"], "cuenta": "7105050502", "nombre": "Pollo" },
@@ -22,66 +25,131 @@
     { "keywords": ["papel", "resma", "esfero", "tinta", "toner"], "cuenta": "739530", "nombre": "Papelería" },
     { "keywords": ["terapia", "fisioterapia", "salud", "medico", "enfermera"], "cuenta": "740505", "nombre": "Honorarios Salud" }
   ],
+
   "normativa_tributaria": {
+
+    "clasificacion_productos": {
+      "agricola_sin_procesar_keywords": [
+        "carne en canal",
+        "res fresca",
+        "ternera fresca",
+        "pollo entero",
+        "pescado fresco",
+        "camaron fresco",
+        "maiz grano",
+        "arroz en cascara",
+        "fruta fresca",
+        "verdura fresca",
+        "hortaliza",
+        "tuberculo",
+        "papa",
+        "yuca"
+      ],
+      "excluir_si_contiene": [
+        "procesado",
+        "embutido",
+        "precocido",
+        "empacado",
+        "industrial",
+        "conserva",
+        "nugget",
+        "jamon",
+        "salchicha"
+      ]
+    },
+
+    "regla_iva": {
+      "descripcion": "El IVA nunca se recalcula. Se usa exactamente el valor que venga en el XML de la DIAN.",
+      "calcular_sobre_base_sin_iva": true
+    },
+
     "retencion_fuente": {
+
       "compras_generales": {
         "base_uvt": 10,
-        "base_pesos": 524000,
-        "tarifas": { "declarante": 0.025, "no_declarante": 0.035 }
+        "tarifas": {
+          "declarante": 0.025,
+          "no_declarante": 0.035
+        }
       },
+
       "compras_agricolas_sin_procesar": {
         "base_uvt": 70,
-        "base_pesos": 3666000,
         "tarifa": 0.015
       },
+
       "servicios_generales": {
         "base_uvt": 4,
-        "base_pesos": 209000,
-        "tarifas": { "declarante": 0.04, "no_declarante": 0.06 }
+        "tarifas": {
+          "declarante": 0.04,
+          "no_declarante": 0.06
+        }
       },
+
       "honorarios_y_comisiones": {
         "base_uvt": 0,
-        "base_pesos": 0,
-        "tarifas": { "juridica": 0.11, "natural_declarante": 0.11, "natural_no_declarante": 0.10 }
+        "tarifas": {
+          "juridica": 0.11,
+          "natural_declarante": 0.11,
+          "natural_no_declarante": 0.10
+        }
+      }
     },
-    },
+
     "reteica_municipal": {
-  "bogota": {
-    "compras": 0.01104,
-    "servicios": 0.00966,
-    "base_compras_pesos": 1414000,
-    "base_servicios_pesos": 209000
-  },
-  "medellin": {
-    "compras": 0.010,
-    "servicios": 0.010,
-    "base_general_pesos": 0
-  },
-  "cali": {
-    "compras": 0.0077,
-    "servicios": 0.0066,
-    "base_general_pesos": 0
-  },
-  "pereira": {
-    "compras": 0.010,
-    "servicios": 0.010,
-    "base_general_pesos": 0
-  },
-  "armenia": {
-    "compras": 0.007,
-    "servicios": 0.010,
-    "base_compras_pesos": 1414000,
-    "base_servicios_pesos": 210000
- }
-  },     
-"reglas_decision": {
-  "orden": [
-    "identificar_tipo",
-    "identificar_ciudad",
-    "evaluar_retefuente",
-    "evaluar_reteica",
-    "calcular_totales"
-  ]
+
+      "bogota": {
+        "compras": 0.01104,
+        "servicios": 0.00966,
+        "base_uvt_compras": 27,
+        "base_uvt_servicios": 4
+      },
+
+      "medellin": {
+        "compras": 0.010,
+        "servicios": 0.010,
+        "base_uvt_general": 0
+      },
+
+      "cali": {
+        "compras": 0.0077,
+        "servicios": 0.0066,
+        "base_uvt_general": 0
+      },
+
+      "pereira": {
+        "compras": 0.010,
+        "servicios": 0.010,
+        "base_uvt_general": 0
+      },
+
+      "armenia": {
+        "compras": 0.007,
+        "servicios": 0.010,
+        "base_uvt_compras": 27,
+        "base_uvt_servicios": 4
+      }
     }
+  },
+
+  "reglas_decision": {
+    "orden": [
+      "identificar_tipo_documento",
+      "identificar_tipo_operacion",
+      "clasificar_producto",
+      "identificar_ciudad",
+      "calcular_base_sin_iva",
+      "evaluar_retefuente",
+      "evaluar_reteica",
+      "calcular_totales_finales"
+    ],
+
+    "reglas_clave": [
+      "La base para retenciones siempre es el subtotal antes de IVA",
+      "El IVA nunca se recalcula ni se modifica",
+      "Si producto coincide con agricola_sin_procesar_keywords Y no contiene palabras de excluir_si_contiene, aplicar regla agricola",
+      "Las bases en pesos siempre se calculan como base_uvt * uvt_2026",
+      "Si no supera base mínima no aplicar retención"
+    ]
   }
 }
